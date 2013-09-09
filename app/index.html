@@ -8,49 +8,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/bootstrap.css">
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <!-- remplace le yeoman boostrap.css par celui installe par bower -->
+    <!--<link rel="stylesheet" href="styles/bootstrap.css">-->
+    <!--<link rel="stylesheet" href="styles/main.css">-->
+    <!-- endbuild -->
+
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
 </head>
   <body ng-app="censeurApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/bootstrap/assets/js/html5shiv.js"></script>
+      <script src="bower_components/bootstrap/assets/js/respond.min.js"></script>
+      <script src="bower_components/es5-shim/es5-shim.min.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <!-- NavBar-->
+      <section id="navbar">
+        <pre>$location.path(): {{location.path()}}</pre>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container" ng-controller="NavbarCtrl">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Censeur</a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#infos">Infos</a></li>
+                <li><a href="#carriere">Carrière</a></li>
+                <li><a href="#about">About</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+
+<!-- ancier code a transformer
+          <div class="navbar-inner">
+            <a class="brand" href="#">Title</a>
+            <ul class="nav">
+              <li ui-route="/home"  ng-class="{active: $uiRoute}"><a ng-href="/#/home">Accueil</a></li>
+              <li ui-route="/fiche" ng-class="{active: $uiRoute}"><a ng-href="/#/fiche">Fiche</a></li>
+              <li ui-route="/test"  ng-class="{active: $uiRoute}"><a ng-href="/#/test">Test</a></li>
+            </ul>
+          </div>
+          </div>
+        </div>
+-->
+      </section>
+
+
     <div class="container" ng-view=""></div>
 
     <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 
-        <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/bootstrap/js/affix.js"></script>
-        <script src="bower_components/bootstrap/js/alert.js"></script>
-        <script src="bower_components/bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/bootstrap/js/modal.js"></script>
-        <script src="bower_components/bootstrap/js/transition.js"></script>
-        <script src="bower_components/bootstrap/js/button.js"></script>
-        <script src="bower_components/bootstrap/js/popover.js"></script>
-        <script src="bower_components/bootstrap/js/carousel.js"></script>
-        <script src="bower_components/bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/bootstrap/js/collapse.js"></script>
-        <script src="bower_components/bootstrap/js/tab.js"></script>
-        <!-- endbuild -->
 
+
+        <!-- build:js scripts/plugins.js -->
         
-				<!-- build:js scripts/modules.js -->
-				<script src="bower_components/angular-route/angular-route.js"></script>
-				<script src="bower_components/angular-animate/angular-animate.js"></script>
+        <!-- endbuild -->
+        
+		<!-- build:js scripts/modules.js -->
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -59,6 +100,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/navbar.js"></script>
         <!-- endbuild -->
 </body>
 </html>
