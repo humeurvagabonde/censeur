@@ -1,13 +1,25 @@
 'use strict';
 
-angular.module('censeurApp', ['ngRoute', 'ngAnimate'])
+angular.module('censeurApp', ['ngResource', 'ngRoute', 'ngAnimate'])
   .config(function ($routeProvider) {
+
+    //$locationProvider.html5Mode(true);
+    //$locationProvider.hashPrefix('!');
+
     $routeProvider
-      .when('/', {
+      .when('/infos', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+			.when('/carriere', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+			.when('/about', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/infos'
       });
   });
