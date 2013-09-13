@@ -1,4 +1,14 @@
-<p>This is the annuaire view.</p>
-<div ng-repeat="resultat in resultats">
-	{{ resultat.nom }}
-</div>
+<form ng-submit="recherche()" class="form-inline" role="form">
+	<div class="form-group">
+		<label for="token" class="sr-only">Nom</label>
+		<input type="text" ng-model="token" class="form-control input-lg" id="token" size="30" placeholder="Nom">
+	</div>
+   	<button class="btn btn-primary btn-lg" type="submit">Rechercher</button>
+</form>
+<h2>Résultats</h2>
+<div ng-repeat="resultat in resultats" class="panel panel-default">
+  <div class="panel-body">
+    {{ resultat.nom }} {{ resultat.prenom }}
+  </div>	
+</div>     
+

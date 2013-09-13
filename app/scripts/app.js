@@ -24,6 +24,6 @@ angular.module('censeurApp', ['ngResource', 'ngRoute', 'ngAnimate', 'ui.route', 
         controller: 'AnnuaireCtrl'
       })
       .otherwise({
-        redirectTo: '/infos'
+        redirectTo: '/annuaire'
       });
   });
