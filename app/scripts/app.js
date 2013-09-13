@@ -19,6 +19,10 @@ angular.module('censeurApp', ['ngResource', 'ngRoute', 'ngAnimate', 'ui.route', 
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/annuaire', {
+        templateUrl: 'views/annuaire.html',
+        controller: 'AnnuaireCtrl'
+      })
       .otherwise({
         redirectTo: '/infos'
       });
