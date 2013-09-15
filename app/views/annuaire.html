@@ -6,9 +6,45 @@
    	<button class="btn btn-primary btn-lg" type="submit">Rechercher</button>
 </form>
 <h2>Résultats</h2>
-<div ng-repeat="resultat in resultats" class="panel panel-default">
-  <div class="panel-body">
-    {{ resultat.nom }} {{ resultat.prenom }}
-  </div>	
-</div>     
+
+<div class="panel panel-default">
+  <!-- from http://tutorialzine.com/2013/08/learn-angularjs-5-examples/ -->
+  <div class="row">
+    <button type="button" class="btn btn-default btn-lg col-md-1 col-md-offset-8" data-ng-class="{active: layout == 'list'}" data-ng-click="switchLayout('list')">
+      <span class="glyphicon glyphicon-th-list"></span>
+    </button>
+    <button type="button" class="btn btn-default btn-lg col-md-1" data-ng-class="{active: layout == 'grid'}" data-ng-click="switchLayout('grid')">
+      <span class="glyphicon glyphicon-th"></span>
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  
+  <div class="animate-switch-container" data-ng-switch on="layout">
+    <div data-ng-switch-when="grid" class="my-switch-animation">
+      <div class="col-sm-6 col-md-4"  data-ng-repeat="resultat in resultats">
+        <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="...">
+          <div class="caption">
+            <h3>{{resultat.prenom}} {{resultat.nom}}</h3>
+            <p>Description du profil</p>
+            <p><a href="#" class="btn btn-primary">Button</a> <a href="#" class="btn btn-default">Button</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <ul data-ng-switch-when="list" class="my-switch-animation">
+      <!-- A compact view smaller photos and titles -->
+      <li ng-repeat="resultat in resultats">
+        <p>{{resultat.prenom}} {{resultat.nom}}</p>
+      </li>
+    </ul>
+    
+  </div>
+
+
+</div>
+   
 
