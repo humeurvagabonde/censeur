@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('censeurApp', ['ngResource', 'ngRoute', 'ngAnimate', 'ui.route', 'ui.bootstrap'])
+angular.module('censeurApp', ['ngResource', 'ngRoute', 'ngAnimate', 'ui.route', 'ui.bootstrap','underscore', 'ajoslin.promise-tracker'])
   .config(function ($routeProvider) {
 
     //$locationProvider.html5Mode(true);
